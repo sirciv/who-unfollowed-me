@@ -37,9 +37,9 @@ def extract_values_from_following_json(input_file, output_file):
 
         # Extract 'value' properties
         values = [
-            entry["string_list_data"][0]["value"]
+            entry["title"]
             for entry in data.get("relationships_following", [])
-            if entry["string_list_data"]
+            if entry.get("title")
         ]
 
         # Write the values to the output file, each on a new line
